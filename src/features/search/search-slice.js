@@ -4,7 +4,9 @@ const initialState = {
     search: '',
     lat: '',
     lon: '',
-    display: true,
+    timezone: '',
+    date: null,
+    display: false,
 }
 
 const searchSlice = createSlice({
@@ -15,6 +17,8 @@ const searchSlice = createSlice({
             state.search = action.payload.name;
             state.lat = action.payload.lat;
             state.lon = action.payload.lon;
+            state.timezone = action.payload.timezone;
+            state.date = action.payload.date;
         },
         setSuggestionTrigger: (state, action) => {
             state.display = action.payload;
@@ -31,7 +35,12 @@ export const selectSearch = (state) => state.search.search;
 export const selectSuggestionTrigger = (state) => state.search.display;
 export const selectCoordinates = (state) => {
     if((state.search.lon && state.search.lat)) {
-        return `${state.search.lat},${state.search.lon}`
+        return {
+            lat: state.search.lat,
+            lon: state.search.lon,
+            timezone: state.search.timezone,
+            date: state.search.date,
+        }
     }
     return `${state.search.search}`
 } 

@@ -5,10 +5,11 @@ import { useSelector } from "react-redux"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-import AirQuality from './chunks/AirQuality';
+import AirQuality from './chunks/airQuality/AirQuality';
 import CurrentWeather from './chunks/CurrentWeather';
 import CurrentLocation from './chunks/LocationInfo';
 import TemperatureGraph from './chunks/TemperatureGraph';
+import AirQualityGraph from './chunks/airQuality/AirQualityGraph'
 
 import { selectCurrentWeather } from '../currentWeather/currentWeather-slice';
 
@@ -18,7 +19,7 @@ export const CurrentWeatherCard = () => {
 
   return (
     <>
-      {error && 'Error'}
+      {error && error}
       {status === 'idle' && <Skeleton/>}
       {status !== 'idle' && (
         <div className='wrapper'>
@@ -42,6 +43,7 @@ export const CurrentWeatherCard = () => {
           </Row>
         </div>
         <TemperatureGraph/>
+        <AirQualityGraph />
       </div>
       )}
     </>

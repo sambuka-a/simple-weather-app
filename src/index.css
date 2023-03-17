@@ -48,17 +48,26 @@ code {
 .site-card-wrapper {
   margin: 0 20px;
 }
-.custom-tooltip {
-  background-color: #fff;
-  padding: 5px 10px;
-  filter: drop-shadow(0 0 0.75rem rgb(196, 196, 196));
+
+.locationInfo {
+  display: flex;
+  flex-direction: column;
 }
 
-.custom-tooltip img {
+.customTooltip {
+  background-color: #fff;
+  padding: 20px;
+  filter: drop-shadow(0 0 0.75rem rgb(196, 196, 196));
+  border-radius: 10px;
+}
+
+.customTooltip img {
   display: block;
   margin: auto;
 }
-.pmData,
+.pmData {
+  display: flex;
+}
 .currentWeather {
   display: flex;
 }
@@ -69,6 +78,51 @@ code {
 .pmDetailsIcon {
   margin-right: 10px;
 }
-.country {
-  margin-bottom: 0px !important;
+
+.weather_title {
+  display: flex;
+  justify-content: center;
+}
+
+.day {
+  color: rgb(255, 180, 94);
+  font-size: 34px;
+  padding-right: 10px;
+}
+
+.night {
+  color: rgb(51, 82, 61);
+  font-size: 34px;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.weatherDetails {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tempGraphData {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.units {
+  display: flex;
+}
+.wDescr {
+  padding-left: 15px;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skeletonWrapper {
+  margin: 20px;
 }
